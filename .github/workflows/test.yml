@@ -10,10 +10,10 @@ on:
         type: choice
         description: 'The name of the Podspec.'
         options:
-            - SumUpCardKit
-            - BankGlobalFeatures
+            - 'SumUpCardKit'
+            - 'BankGlobalFeatures'
         required: true
-        default: SumUpCardKit
+        default: 'SumUpCardKit'
         
 jobs:
     print-option:
