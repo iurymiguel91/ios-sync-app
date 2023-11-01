@@ -1,0 +1,27 @@
+name: Update pod version
+on:
+    workflow_dispatch:
+    inputs:
+        version:
+        description: 'The version number to use to update the pod. If not provided, the patch version will be incremented.'
+        required: false
+        default: ''
+        name:
+        type: choice
+        description: 'The name of the Podspec.'
+        options:
+            - SumUpCardKit
+            - BankGlobalFeatures
+        required: true
+        default: SumUpCardKit
+        
+jobs:
+    print-option:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Print Chosen Option
+        run: |
+            echo ${{ github.event.inputs.name }}
